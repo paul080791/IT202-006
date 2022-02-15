@@ -8,6 +8,14 @@ function processArray($arr) {
     echo "<br>Processing Array:<br><pre>" . var_export($arr, true) . "</pre>";
     echo "<br>Odds output:<br>";
     //TODO add logic here to echo out only odd values
+    $count=0;
+    //echo "\n Position on array => value \n";
+    foreach($arr as $value){
+        if (($value%2) == 1){
+            echo "\narr[$count] =>" . var_export($value,true);
+        }
+        $count++;
+    }   
 
 }
 echo "Problem 1: Odd Output<br>";

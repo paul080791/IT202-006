@@ -8,7 +8,25 @@ function bePositive($arr) {
     echo "<br>Processing Array:<br><pre>" . var_export($arr, true) . "</pre>";
     echo "<br>Positive output:<br>";
     //TODO use echo to output all of the values as positive (even if they were originally positive)
+    $index=0;
+    echo "\n";
+    foreach($arr as $value){
+        if($value==="h"){
+            $num=(int)$value;
+        }
+        else{
+            $num=$value;    
+        }
+       
+        if($num >= 0 ){
+            echo "arr[$index] = > $num\n";
+        }
+        else{
+            $num=$num*-1;
+            echo "arr[$index] = > $num\n";
 
+        }
+    }
 }
 echo "Problem 3: Be Positive<br>";
 ?>
