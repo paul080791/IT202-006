@@ -12,7 +12,7 @@ function processArray($arr) {
     //echo "\n Position on array => value \n";
     foreach($arr as $value){
         if (($value%2) == 1){
-            echo "\narr[$count] =>" . var_export($value,true);
+            echo "<br>arr[$count] =>" . var_export($value,true) . "<br>";
         }
         $count++;
     }   
