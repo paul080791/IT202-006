@@ -94,6 +94,6 @@ You can find all 3 template files in this gist: <a href="https://gist.github.com
 <tr><td> <em>Sub-Task 4: </em> Pull Request URL for M2-PHP-HW to dev</td></tr>
 <tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/paul080791/IT202-006/pull/3">https://github.com/paul080791/IT202-006/pull/3</a> </td></tr>
 <tr><td> <em>Sub-Task 5: </em> Talk about what you learned, any issues you had, how you resolve them</td></tr>
-<tr><td> <em>Response:</em> <p>I learned how to use arrays, conditionals, use loop to got through an<br>array, use number_format to set precision on decimals.<br></p><br></td></tr>
+<tr><td> <em>Response:</em> <p>I learned how to use arrays, conditionals, use loop to got through an<br>array, use number_format to set precision on decimals.<gitbr></p><br></td></tr>
 </table></td></tr>
 <table><tr><td><em>Grading Link: </em><a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IT202-006-S22/m2-php-hw/grade/psg4" target="_blank">Grading</a></td></tr></table>
