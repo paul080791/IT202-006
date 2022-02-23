@@ -1,4 +1,6 @@
-er.php
+<?php
+require (__DIR__ . "/../../lib/functions.php");
+?>
 <form onsubmit="return validate(this)" method="POST">
     <div>
         <label for="email">Email</label>
@@ -23,7 +25,50 @@ er.php
     }
 </script>
 <?php
+
  //TODO 2: add PHP Code
- if(isset($_POST["email"]))
+ if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm"])){
+     $email= se($_POST,"email","",false);
+     $password= se($_POST,"password","",false);
+     $confirm= se($_POST,"confirm","",false);
+     //TODO 3: validate/use
+     $hasError=false;
+     if(empty($email)){
+         echo "Email must not be empty";
+         $hasError=true;
+         }
+     // Sanitize    
+     $email= filter_var($email, FILTER_SANITIZE_EMAIL);
+     // Validate
+     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+         echo "Invalid email address";
+         $hasError=true;
+     }
+    if(empty($password)){
+        echo "Password must not be empty";
+        $hasError=true;
+        }
+    if(empty($confirm)){
+        echo "Confirm must not be empty";
+        $hasError=true;
+        }
+    if(strlen($password) < 8){
+        echo "Password too short!";
+        $hasError=true;
+        }
+    if(strlen($password)>0 && $password !== $confirm){
+        echo "Password must match";
+        $hasError=true;
+    }        
+    if(!$hasError){
+        echo "Welcome, $email";
+
+    }
+        
+
+
+
+
+ }
 
 ?>
