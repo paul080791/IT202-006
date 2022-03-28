@@ -1,3 +1,9 @@
+<canvas id="canvas" width="600" height="400" tabindex="1"></canvas>
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+  
 // Collect The Square game
 
 // Get a reference to the canvas DOM element
@@ -25,6 +31,18 @@ var targetX = 0;
 var targetY = 0;
 var targetLength = 25;
 
+//bonnus Time target square but decrease size of square
+var bonnusX =0;
+var bonnusY = 0;
+var bonnusLength = 25;
+
+// Reduce Speed Target square but increase size of square
+
+var SpeedReduceX =0;
+var SpeedReduceY = 0;
+var SpeedReduceLength = 25;
+
+var colors = ["rgba(255,0,0,1)", "rgba(0,255,0,1)", "rgba(0,0,255,1)"];
 // Determine if number a is within the range b to c (exclusive)
 function isWithin(a, b, c) {
   return (a > b && a < c);
@@ -34,7 +52,6 @@ function isWithin(a, b, c) {
 var countdown = 30;
 // ID to track the setTimeout
 var id = null;
-
 // Listen for keydown events
 canvas.addEventListener('keydown', function(event) {
   event.preventDefault();
@@ -79,9 +96,24 @@ function menu() {
   context.textAlign = 'center';
   context.fillText('Collect the Square!', canvas.width / 2, canvas.height / 4);
   context.font = '24px Arial';
-  context.fillText('Click to Start', canvas.width / 2, canvas.height / 2);
+  context.fillText('Click to Start', canvas.width / 2, canvas.height / 2 - 50);
   context.font = '18px Arial'
-  context.fillText('Use the arrow keys to move', canvas.width / 2, (canvas.height / 4) * 3);
+  context.fillText('Use the arrow keys to move', canvas.width / 2, canvas.height / 2 - 20);
+  context.fillStyle = '#08A6DB';
+  context.fillRect(canvas.width / 2 - 100,205,15,15);
+  context.fillText('Increase time but reduce Square', canvas.width / 2 + 60,220 );
+  context.font = '18px Arial'
+  context.fillStyle = '#F4F308';
+  context.fillRect(canvas.width / 2 - 100,230,15,15);
+  context.fillStyle = '#000000';
+  context.fillText('Increase speed and increase square', canvas.width / 2 + 60, 245 );
+  context.font = '18px Arial'
+
+  context.fillStyle = '#00FF00';
+  context.fillRect(canvas.width / 2 - 100,255,15,15);
+  context.fillText('Score!', canvas.width / 2, 270 );
+  context.font = '18px Arial'
+  
   // Start the game on a click
   canvas.addEventListener('click', startGame);
 }
@@ -92,13 +124,16 @@ function startGame() {
   id = setInterval(function() {
     countdown--;
   }, 1000)
+  
   // Stop listening for click events
   canvas.removeEventListener('click', startGame);
   // Put the target at a random starting point
 	moveTarget();
+    MoveBonnusSquare();
   // Kick off the draw loop
   draw();
 }
+
 
 // Show the game over screen
 function endGame() {
@@ -118,11 +153,21 @@ function moveTarget() {
   targetY = Math.round(Math.random() * canvas.height - targetLength)
 }
 
+function MoveBonnusSquare() {
+  bonnusX = Math.round(Math.random() * canvas.width - bonnusLength);
+  bonnusY = Math.round(Math.random() * canvas.height - bonnusLength)
+}
+
+function MoveSpeedSquare() {
+  SpeedReduceX = Math.round(Math.random() * canvas.width - bonnusLength);
+  SpeedReduceY = Math.round(Math.random() * canvas.height - bonnusLength)
+}
 // Clear the canvas
 function erase() {
   context.fillStyle = '#FFFFFF';
   context.fillRect(0, 0, 600, 400);
 }
+
 
 // The main draw loop
 function draw() {
@@ -153,6 +198,7 @@ function draw() {
   if (x + sideLength > canvas.width) {
     x = canvas.width - sideLength;
   }
+  
   // Collide with the target
   if (isWithin(targetX, x, x + sideLength) || isWithin(targetX + targetLength, x, x + sideLength)) { // X
     if (isWithin(targetY, y, y + sideLength) || isWithin(targetY + targetLength, y, y + sideLength)) { // Y
@@ -160,14 +206,57 @@ function draw() {
       moveTarget();
       // Increase the score
       score++;
+    
+      
     }
+ 
   }
+
+  if (isWithin(bonnusX, x, x + sideLength) || isWithin(bonnusX + bonnusLength, x, x + sideLength)) { // X
+    if (isWithin(bonnusY, y, y + sideLength) || isWithin(bonnusY + bonnusLength, y, y + sideLength)) { // Y
+        // Respawn the target
+      MoveBonnusSquare();
+      // Increase 2 seconds more
+      countdown=countdown + 2;
+      // Decrease size of square
+      sideLength-=5;
+      //decrease speed;
+      speed=speed-1 ;
+           
+    }
+}
+
+if (isWithin(SpeedReduceX, x, x + sideLength) || isWithin(SpeedReduceX + SpeedReduceLength, x, x + sideLength)) { // X
+    if (isWithin(SpeedReduceY, y, y + sideLength) || isWithin(SpeedReduceY + SpeedReduceLength, y, y + sideLength)) { // Y
+        // Respawn the target
+      MoveSpeedSquare();
+      // Increase speed by 2
+      speed=speed + 2;
+      // increase size of square
+      sideLength+=5;
+           
+    }
+}
+      // Respawn the target
   // Draw the square
   context.fillStyle = '#FF0000';
   context.fillRect(x, y, sideLength, sideLength);
   // Draw the target 
   context.fillStyle = '#00FF00';
   context.fillRect(targetX, targetY, targetLength, targetLength);
+  // Draw bonnus target
+  if (countdown < 25){
+    context.fillStyle = '#08A6DB';// skyblue
+    context.fillRect(bonnusX, bonnusY, bonnusLength, bonnusLength);
+  // draw speed increase target
+  if(countdown<25){
+    context.fillStyle = '#F4F308';// yellow
+    context.fillRect(SpeedReduceX, SpeedReduceY,SpeedReduceLength,SpeedReduceLength);
+
+  }  
+  }
+
+
   // Draw the score and time remaining
   context.fillStyle = '#000000';
   context.font = '24px Arial';
@@ -185,3 +274,11 @@ function draw() {
 // Start the game
 menu();
 canvas.focus();
+</script>
+<style>
+
+#canvas {
+    width: 600px;
+    height: 400px;
+    border: 1px solid black;
+  }
