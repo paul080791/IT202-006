@@ -245,11 +245,11 @@ if (isWithin(SpeedReduceX, x, x + sideLength) || isWithin(SpeedReduceX + SpeedRe
   context.fillStyle = '#00FF00';
   context.fillRect(targetX, targetY, targetLength, targetLength);
   // Draw bonnus target
-  if (countdown < 20){
+  if (countdown < 25){
     context.fillStyle = '#08A6DB';// skyblue
     context.fillRect(bonnusX, bonnusY, bonnusLength, bonnusLength);
   // draw speed increase target
-  if(countdown<20){
+  if(countdown<25){
     context.fillStyle = '#F4F308';// yellow
     context.fillRect(SpeedReduceX, SpeedReduceY,SpeedReduceLength,SpeedReduceLength);
 
