@@ -1,5 +1,5 @@
 .alert-success {
-    background-color: green
+    background-color: green;
     color:black;
 }
 
@@ -15,6 +15,7 @@
 
 .alert-info {
     background-color: teal;
+    color:black;
 }
 nav li{display: inline; background-color: grey;}
 nav li a{color: white}
