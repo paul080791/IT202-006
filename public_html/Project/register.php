@@ -24,58 +24,42 @@ reset_session();
 <script>
     function validate(form) {
         //TODO 1: implement JavaScript validation
+        isValid=true;
+        const email= form.email.value;
+        const usern= form.username.value;
+        const pw = form.password.value;
+        const con = form.confirm.value;
+        if(email.indexOf("@")>-1){
+            if(!isValidEmail(email)){
+                flash("Invalid email","danger");
+                isValid=false;
+            }// if(!isValidEmail(email))
+        }//if(email.indexOf("@")>-1)
+        else{
+            if(!isValidUsername(usern)){
+                flash("Username must be lowercase, 3-16 characters, and contain only a-z,0-9, _or -","danger");
+                isvalid=false;    
+            }//if(!isValidUsername(email)){
+        }
+        if(!isValidPassword(password)){
+            flash("Password too short","danger");
+            isValid=false;
+        }
+        else if(!isValidPassword(con)){
+            flash("confirm Password too short","danger");
+            isValid=false;
+        }
+        //ensure it returns false for an error and true for success
+        
+        return isValid;
+
+
         //ensure it returns false for an error and true for success
 
         return true;
     }
 </script>
 <?php
-
- //TODO 2: add PHP Code
- if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm"])){
-     $email= se($_POST,"email","",false);
-     $password= se($_POST,"password","",false);
-     $confirm= se($_POST,"confirm","",false);
-     //TODO 3: validate/use
-     $hasError=false;
-     if(empty($email)){
-         echo "Email must not be empty";
-         $hasError=true;
-         }
-     // Sanitize    
-     $email= filter_var($email, FILTER_SANITIZE_EMAIL);
-     // Validate
-     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-         echo "Invalid email address";
-         $hasError=true;
-     }
-    if(empty($password)){
-        echo "Password must not be empty";
-        $hasError=true;
-        }
-    if(empty($confirm)){
-        echo "Confirm must not be empty";
-        $hasError=true;
-        }
-    if(strlen($password) < 8){
-        echo "Password too short!";
-        $hasError=true;
-        }
-    if(strlen($password)>0 && $password !== $confirm){
-        echo "Password must match";
-        $hasError=true;
-    }        
-    if(!$hasError){
-        echo "Welcome, $email";
-
-    }
-        
-
-
-
-
- }
-
 //TODO 2: add PHP Code
 if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm"]) && isset($_POST["username"])) {
     $email = se($_POST, "email", "", false);
@@ -134,5 +118,3 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm
 ?>
 <?php
 require(__DIR__ . "/../../partials/flash.php");
-
-?>
