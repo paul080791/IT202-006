@@ -27,7 +27,7 @@ require(__DIR__ . "/../../partials/nav.php");
         else{
             if(!isValidUsername(email)){
                 flash("Username must be lowercase, 3-16 characters, and contain only a-z,0-9, _or -","danger");
-                isvalid=false;    
+                isValid=false;    
             }//if(!isValidUsername(email)){
         }
         if(!isValidPassword(password)){

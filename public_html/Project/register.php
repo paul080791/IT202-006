@@ -38,10 +38,9 @@ reset_session();
         else{
             if(!isValidUsername(usern)){
                 flash("Username must be lowercase, 3-16 characters, and contain only a-z,0-9, _or -","danger");
-                isvalid=false;    
+                isValid=false;    
             }//if(!isValidUsername(email)){
-        }
-        if(!isValidPassword(password)){
+            else    if(!isValidPassword(password)){
             flash("Password too short","danger");
             isValid=false;
         }
@@ -49,14 +48,13 @@ reset_session();
             flash("confirm Password too short","danger");
             isValid=false;
         }
+        }
+        
         //ensure it returns false for an error and true for success
         
         return isValid;
 
 
-        //ensure it returns false for an error and true for success
-
-        //return true;
     }
 </script>
 <?php
