@@ -37,6 +37,9 @@ session_start();
             <li><a href="<?php echo get_url('login.php'); ?>">Login</a></li>
             <li><a href="<?php echo get_url('register.php'); ?>">Register</a></li>
         <?php endif; ?>
+        <?php if(has_role("Admin")):?>
+            <li><a href="<?php echo get_url('admin'); ?>">Admin</a></li>
+        <?php endif;?>
         <?php if (is_logged_in()) : ?>
             <li><a href="<?php echo get_url('logout.php'); ?>">Logout</a></li>
         <?php endif; ?>
