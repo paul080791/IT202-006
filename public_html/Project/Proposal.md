@@ -19,36 +19,36 @@
 - Milestone 1
   - (duplicate template here for Milestone 1 features)
   
-- [ ] \(mm/dd/yyyy of completion) User will be able to register a new account
+- [x] \(04/05/2022) User will be able to register a new account
   -  [Milestone 1](https://github.com/paul080791/IT202-006/blob/Milestone1/public_html/Project/milestone1.md)
   -  [https://psg4-prod.herokuapp.com/Project/register.php](https://psg4-prod.herokuapp.com/Project/register.php)
   
-- [ ] \(mm/dd/yyyy of completion) User will be able to login to their account (given they enter the correct credentials)
+- [x] \(04/05/2022) User will be able to login to their account (given they enter the correct credentials)
   -  [Milestone 1](https://github.com/paul080791/IT202-006/blob/Milestone1/public_html/Project/milestone1.md)
   -  [https://psg4-prod.herokuapp.com/Project/login.php](https://psg4-prod.herokuapp.com/Project/login.php)  
   
-- [ ] \(mm/dd/yyyy of completion) User will be able to logout
+- [x] \(04/05/2022) User will be able to logout
   -  [Milestone 1](https://github.com/paul080791/IT202-006/blob/Milestone1/public_html/Project/milestone1.md)
   -  [https://psg4-prod.herokuapp.com/Project/logout.php](https://psg4-prod.herokuapp.com/Project/logout.php)
-- [ ] \(mm/dd/yyyy of completion) Basic security rules implemented
+- [x] \(04/05/2022) Basic security rules implemented
   -  [Milestone 1](https://github.com/paul080791/IT202-006/blob/Milestone1/public_html/Project/milestone1.md)
   -  [https://psg4-prod.herokuapp.com/Project/profile.php](https://psg4-prod.herokuapp.com/Project/profile.php)
-- [ ] \(mm/dd/yyyy of completion) Basic Roles implemented
+- [x] \(04/05/2022) Basic Roles implemented
   -  [Milestone 1](https://github.com/paul080791/IT202-006/blob/Milestone1/public_html/Project/milestone1.md)
   -  [https://psg4-prod.herokuapp.com/Project/admin/create_role.php](https://psg4-prod.herokuapp.com/Project/admin/create_role.php)
-- [ ] \(mm/dd/yyyy of completion) Site should have basic styles/theme applied; everything should be styled
+- [x] \(04/05/2022) Site should have basic styles/theme applied; everything should be styled
   -  [Milestone 1](https://github.com/paul080791/IT202-006/blob/Milestone1/public_html/Project/milestone1.md)
   -  [https://psg4-prod.herokuapp.com/Project/home.php](https://psg4-prod.herokuapp.com/Project/home.php)
   -  [https://psg4-prod.herokuapp.com/Project/styles.css](https://psg4-prod.herokuapp.com/Project/styles.css)
 
-- [ ] \(mm/dd/yyyy of completion)Any output messages/errors should be “user friendly”
+- [x] \(04/05/2022)Any output messages/errors should be “user friendly”
   -  [Milestone 1](https://github.com/paul080791/IT202-006/blob/Milestone1/public_html/Project/milestone1.md)
   -  [https://psg4-prod.herokuapp.com/Project/logout.php](https://psg4-prod.herokuapp.com/Project/logout.php)
-- [ ] \(mm/dd/yyyy of completion) User will be able to see their profile
+- [x] \(04/05/2022) User will be able to see their profile
   -  [Milestone 1](https://github.com/paul080791/IT202-006/blob/Milestone1/public_html/Project/milestone1.md)
   -  [https://psg4-prod.herokuapp.com/Project/profile.php](https://psg4-prod.herokuapp.com/Project/profile.php)
   
-- [ ] \(mm/dd/yyyy of completion) User will be able to edit their profile
+- [x] \(04/05/2022) User will be able to edit their profile
   -  [Milestone 1](https://github.com/paul080791/IT202-006/blob/Milestone1/public_html/Project/milestone1.md)
   -  [https://psg4-prod.herokuapp.com/Project/profile.php](https://psg4-prod.herokuapp.com/Project/profile.php)
 
