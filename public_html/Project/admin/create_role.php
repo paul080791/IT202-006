@@ -30,15 +30,17 @@ if (isset($_POST["name"]) && isset($_POST["description"])) {
 ?>
 <h1>Create Role</h1>
 <form method="POST">
-    <div>
-        <label for="name">Name</label>
-        <input id="name" name="name" required />
+    <div class="form-floating">
+        <input id="name" style="width:500px; margin-left: 10px;margin-top:0.3cm;" name="name" class="form-control"  placeholder="Leave a description here"  required />
+        <label for="name" style="color:black;">Name</label>
     </div>
-    <div>
-        <label for="d">Description</label>
-        <textarea name="description" id="d"></textarea>
+    <div class="form-floating">
+        <textarea style="width:500px;height:80px;margin-left: 10px;margin-top:0.3cm;" class="form-control" placeholder="Leave a description here"  name="description" id="d"></textarea>    
+        <label  for="d" style="color:black;">Description</label>
+        
     </div>
-    <input type="submit" value="Create Role" />
+    <input class="btn btn-outline-primary"  style="margin-left: 10px;margin-top:0.3cm;background:lightgreen; color:black;" type="submit" value="Create Role" />
+
 </form>
 <?php
 //note we need to go up 1 more directory
