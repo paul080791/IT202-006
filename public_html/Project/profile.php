@@ -94,29 +94,30 @@ $email = get_user_email();
 $username = get_username();
 ?>
 <form method="POST" onsubmit="return validate(this);">
-    <div class="mb-3">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" value="<?php se($email); ?>" />
+    <div class="input-group mb-3">
+        <label class="input-group-text"  for="email" style="margin: 10px 0px 20px 50px;">Email</label>
+        <input class="form-control"  placeholder="Email" style="margin-top: 0.2cm; margin: 10px 780px 20px 0px;" type="email" name="email" id="email" value="<?php se($email); ?>" />
     </div>
-    <div class="mb-3">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" value="<?php se($username); ?>" />
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="username" style="margin: 10px 0px 20px 50px;">Username</label>
+        <input class="form-control"  style="margin-top: 0.2cm; margin: 10px 780px 20px 0px;" type="text" name="username" id="username" value="<?php se($username); ?>" />
     </div>
     <!-- DO NOT PRELOAD PASSWORD -->
-    <div>Password Reset</div>
-    <div class="mb-3">
-        <label for="cp">Current Password</label>
-        <input type="password" name="currentPassword" id="cp" />
+    <div class="dropdown-divider"></div>
+    <label > Update Password</label>
+    <div class="input-group mb-3">
+        <label class="input-group-text" style="margin: 10px 0px 20px 50px;" for="cp">Current Password</label>
+        <input type="password" class="form-control" name="currentPassword" id="cp" style="margin-top: 0.2cm; margin: 10px 780px 20px 0px;" />
     </div>
-    <div class="mb-3">
-        <label for="np">New Password</label>
-        <input type="password" name="newPassword" id="np" />
+    <div class="input-group mb-3">
+        <label class="input-group-text" style="margin: 10px 0px 20px 50px;" for="np" >New Password</label>
+        <input type="password" class="form-control" name="newPassword" id="np" style="margin-top: 0.2cm; margin: 10px 780px 20px 0px;" />
     </div>
-    <div class="mb-3">
-        <label for="conp">Confirm Password</label>
-        <input type="password" name="confirmPassword" id="conp" />
+    <div class="input-group mb-3">
+        <label class="input-group-text" style="margin: 10px 0px 20px 50px;" for="conp">Confirm Password</label>
+        <input type="password" class="form-control" name="confirmPassword" id="conp" style="margin-top: 0.2cm; margin: 10px 780px 20px 0px;" />
     </div>
-    <input type="submit" value="Update Profile" name="save" />
+    <input  class="btn btn-outline-primary" type="submit" value="Update Profile" name="save" style="margin-left: 50px;background:lightgreen; color:black;" />
 </form>
 
 <script>

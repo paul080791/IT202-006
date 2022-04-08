@@ -45,17 +45,17 @@ try {
 
 ?>
 <h1>List Roles</h1>
-<form method="POST">
-    <input type="search" name="role" placeholder="Role Filter" />
-    <input type="submit" value="Search" />
+<form method="POST" class="navbar navbar-expand-lg navbar-light bg-light">
+    <input class="form-control me-2" type="search" name="role" placeholder="Role Filter" style="margin: 10px 0px 20px 50px; width:300px;" />
+    <input class="btn btn-outline-success" type="submit" value="Search" style="margin-left: 50px;background:lightgreen; color:black;" />
 </form>
-<table>
+<table class="table" style="color:black; background:lightskyblue;">
     <thead>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Active</th>
-        <th>Action</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Active</th>
+        <th scope="col">Action</th>
     </thead>
     <tbody>
         <?php if (empty($roles)) : ?>

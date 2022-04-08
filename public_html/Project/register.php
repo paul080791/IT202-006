@@ -2,24 +2,24 @@
 require(__DIR__ . "/../../partials/nav.php");
 reset_session();
 ?>
-<form onsubmit="return validate(this)" method="POST">
-    <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" required />
+<form  onsubmit="return validate(this)" method="POST">
+    <div class="input-group mb-3">
+        <label class="input-group-text"  for="email" style="margin: 10px 0px 20px 50px;">Email</label>
+        <input class="form-control"  placeholder="Email" style="margin-top: 0.2cm; margin: 10px 780px 20px 0px;" aria-label="Email" type="text" name="email" required />
     </div>
-    <div>
-        <label for="username">Username</label>
-        <input type="text" name="username" required maxlength="30" />
+    <div style="margin-top: 0.2cm;" class="input-group mb-3">
+        <label class="input-group-text" for="username" style="margin: 10px 0px 20px 50px;">Username</label>
+        <input style="margin-top: 0.2cm; margin: 10px 780px 20px 0px;"  class="form-control" type="text" name="username" require d maxlength="30" />
     </div>
-    <div>
-        <label for="pw">Password</label>
-        <input type="password" id="pw" name="password" required minlength="8" />
+    <div  class="input-group mb-3" style="margin-top: 0.2cm;">
+        <label class="input-group-text" for="pw" style="margin: 10px 0px 20px 50px;">Password</label>
+        <input  class="form-control" style="margin-top: 0.2cm; margin: 10px 780px 20px 0px;" type="password" id="pw" name="password" required minlength="8" />
     </div>
-    <div>
-        <label for="confirm">Confirm</label>
-        <input type="password" name="confirm" required minlength="8" />
+    <div class="input-group mb-3" style="margin-top: 0.2cm;">
+        <label class="input-group-text" for="confirm" style="margin: 10px 0px 20px 50px;">Confirm</label>
+        <input class="form-control" type="password" style="margin-top: 0.2cm; margin: 10px 780px 20px 0px;" name="confirm" required minlength="8" />
     </div>
-    <input type="submit" value="Register" />
+    <input class="btn btn-outline-primary" type="submit" value="Register" style="margin-left: 50px;background:lightgreen; color:black;" />
 </form>
 <script>
     function validate(form) {
