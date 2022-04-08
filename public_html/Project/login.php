@@ -1,16 +1,18 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
 ?>
-<form onsubmit="return validate(this)" method="POST">
-    <div>
+<form  class="d-flex" onsubmit="return validate(this)" method="POST">
+    <div class="container-fluid">
         <label for="email">Email</label>
-        <input type="text" name="email" required />
+        <input class="form-control me-2"  placeholder="Email" aria-label="Email" type="text" name="email" required />
     </div>
-    <div>
+    <div class="container-fluid">
         <label for="pw">Password</label>
-        <input type="password" id="pw" name="password" required minlength="8" />
+        <input  class="form-control me-2" type="password" id="pw" name="password" required minlength="8" />
     </div>
-    <input type="submit" value="Login" />
+    <div class="container-fluid" >
+    <input class="btn btn-outline-success" type="submit" value="Login" style="margin-top: 0.6cm;" />
+    </div>
 </form>
 <script>
     function validate(form) {
