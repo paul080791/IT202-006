@@ -1,6 +1,6 @@
 <table><tr><td> <em>Assignment: </em> Milestone 2 - Proposal markdown</td></tr>
 <tr><td> <em>Student: </em> Paul Gutierrez(psg4)</td></tr>
-<tr><td> <em>Generated: </em> 4/10/2022 11:21:59 PM</td></tr>
+<tr><td> <em>Generated: </em> 4/10/2022 11:26:57 PM</td></tr>
 <tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IT202-006-S22/milestone-2---proposal-markdown/grade/psg4" target="_blank">Grading</a></td></tr></table>
 <table><tr><td> <em>Instructions: </em> <ol>
 <li>Create a new branch from Milestone2 called MS2-Proposal</li>
@@ -26,11 +26,11 @@
 <li>Submit that link to Canvas</li>
 </ol>
 </td></tr></table>
-<table><tr><td> <em>Deliverable 1: </em> Proposal.md File </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/f2c037/000000?text=Partial"></td></tr>
+<table><tr><td> <em>Deliverable 1: </em> Proposal.md File </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Add the direct link to your proposal.md file from the MS2-Proposal branch (There should be at least 11 for shop, 5 for arcade, 8 for bank under Milestone2)</td></tr>
 <tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/paul080791/IT202-006/blob/MS2-Proposal/public_html/Project/Proposal.md">https://github.com/paul080791/IT202-006/blob/MS2-Proposal/public_html/Project/Proposal.md</a> </td></tr>
 <tr><td> <em>Sub-Task 2: </em> Add the link to the pull request from MS2-Proposal to Milestone 2</td></tr>
-<tr><td>Not provided</td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/paul080791/IT202-006/pull/64">https://github.com/paul080791/IT202-006/pull/64</a> </td></tr>
 </table></td></tr>
 <table><tr><td> <em>Deliverable 2: </em> Github Issues and Project Board </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Add Screenshots showing the generated Issues on Github (there should be at least 11 for shop, 5 for arcade, 8 for bank; 1 per major bullet point)</td></tr>
