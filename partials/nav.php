@@ -61,8 +61,7 @@ session_start();
                                 Admin Items
                             </a>
                             <ul class="dropdown-menu bg-secondary" aria-labelledby="rolesDropdown">
-                                <li><a class="dropdown-item" href="<?php echo get_url('admin/add_item.php'); ?>">Add Product</a></li>
-
+                                <li><a class="dropdown-item" href="<?php echo get_url('admin/create_role.php'); ?>">Add Product</a></li>
                             </ul>
                         </li>
             <?php endif; ?>  
