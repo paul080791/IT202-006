@@ -39,10 +39,13 @@ session_start();
             <?php if (is_logged_in()) : ?>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('home.php'); ?>">Home</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('shop.php'); ?>">Shop</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('cart.php'); ?>">Cart</a></li>
             <?php endif; ?>
             <?php if (!is_logged_in()) : ?>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('login.php'); ?>">Login</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('register.php'); ?>">Register</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('shop.php'); ?>">Shop</a></li>
             <?php endif; ?>
 
             <?php if (has_role("Admin")) : ?>
@@ -56,6 +59,8 @@ session_start();
                                 <li><a class="dropdown-item" href="<?php echo get_url('admin/assign_roles.php'); ?>">Assign Roles</a></li>
                             </ul>
                         </li>
+            <?php endif; ?>
+            <?php if (has_role("Admin") || has_role("Shop Owner")) : ?>  
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="rolesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Admin Items
