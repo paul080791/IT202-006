@@ -2,7 +2,7 @@
 //note we need to go up 1 more directory
 require(__DIR__ . "/../../../partials/nav.php");
 $TABLE_NAME = "RM_Items";
-if (!has_role("Admin")) {
+if (!has_role("Admin") && !has_role("Shop Owner")) {
     flash("You don't have permission to view this page", "warning");
     die(header("Location: $BASE_PATH/home.php"));
 }
@@ -26,11 +26,10 @@ if (isset($_POST["itemName"])) {
 <!--<div class="container-fluid">  -->
     <h1>List Items</h1>
     <form method="POST" class="navbar navbar-expand-lg navbar-light bg-light">
-        <!--<div class="input-group mb-3">-->
+     
             <input class="form-control me-2" type="search" name="itemName" placeholder="Item Filter" style="margin: 10px 0px 20px 50px; width:300px;" />
             <input class="btn btn-outline-success" type="submit" value="Search" style="margin-left: 50px;background:lightgreen; color:black;" />
-          
-       <!-- </div>  -->
+      
     </form>
     <?php if (count($results) == 0) : ?>
         <p>No results to show</p>

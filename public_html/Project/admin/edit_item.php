@@ -2,7 +2,7 @@
 //note we need to go up 1 more directory
 require(__DIR__ . "/../../../partials/nav.php");
 $TABLE_NAME = "RM_Items";
-if (!has_role("Admin")) {
+if (!has_role("Admin") && !has_role("Shop Owner")) {
     flash("You don't have permission to view this page", "warning");
     die(header("Location: $BASE_PATH/home.php"));
 }
@@ -52,7 +52,29 @@ function map_column($col)
             <?php if (!in_array($column, $ignore)) : ?>
                 <div class="mb-4">
                     <label class="form-label" for="<?php se($column); ?>"><?php se($column); ?></label>
+                    <?php  if ($column=="visibility") : ?>
+                        <input class="form-check-input" id="visibilityTrue" type="radio" value=1 name="<?php se($column); ?>" />
+                        <?php  if ($value==1) : ?>
+                        <script data="this">
+                          document.getElementById("visibilityTrue").checked=true;
+                        </script>
+                        <?php endif; ?>
+                        <label class="form-check-label" for="<?php se($column); ?>">
+                        True
+                        </label>
+                        <input class="form-check-input" id="visibilityFalse" type="radio" value=0 name="<?php se($column); ?>" />
+                        <?php  if ($value==0) : ?>
+                        <script data="this">
+                          document.getElementById("visibilityFalse").checked= true;
+                        </script>
+                        <?php endif; ?>
+                        <label class="form-check-label" for="<?php se($column); ?>">
+                        False
+                        </label>
+                    <?php endif; ?>
+                    <?php if ($column!="visibility") : ?>
                     <input class="form-control" id="<?php se($column); ?>" type="<?php echo map_column($column); ?>" value="<?php se($value); ?>" name="<?php se($column); ?>" />
+                    <?php endif; ?>
                 </div>
             <?php endif; ?>
         <?php endforeach; ?>
