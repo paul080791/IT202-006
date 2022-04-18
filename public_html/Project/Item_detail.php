@@ -31,10 +31,10 @@ try {
         <?php foreach ($result as $column => $value) : ?>
             <?php if (!se($column,"id") || !se($column,"modified")|| !se($column,"created")|| !se($column,"visibility")) : ?>
                 <div class="mb-4">
-                <?php if ($column=="visibility" && $value=1) : ?> 
+                <?php if ($column=="visibility" && $value==1) : ?> 
                     <label class="form-control" id="<?php se($column); ?>"  value="True" name="<?php se($column); ?>">True</label>
                 <?php endif; ?>   
-                <?php if ($column=="visibility" && $value=0) : ?> 
+                <?php if ($column=="visibility" && $value==0) : ?> 
                     <label class="form-control" id="<?php se($column); ?>"  value="False" name="<?php se($column); ?>">False</label>
                 <?php endif; ?> 
                 <?php if ($column!="visibility") : ?> 
