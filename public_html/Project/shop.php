@@ -37,13 +37,8 @@ if (!in_array($order, ["asc", "desc"])) {
 }
 
 $category = se($_GET, "category","All", false);
-
-
-
 //get name partial search
 $name = se($_GET, "name", "", false);
-//get category
-//$category= se($_GET,"category","",false);
 //split query into data and total
 $base_query = "SELECT id, name,category,visibility, description, cost, stock, image FROM RM_Items items ";
 $total_query = "SELECT count(1) as total FROM RM_Items items";
@@ -61,22 +56,10 @@ if (!empty($name)) {
     $query .= " AND name like :name";
     $params[":name"] = "%$name%";
 }
-if(!empty($category))
-{
-//    $query .= "SELECT id, name, description, cost, stock, image FROM RM_Items items WHERE category='$category' ";
-    
-}
-
 //apply column and order sort
 if (!empty($col) && !empty($order)) {
     $query .= " ORDER BY $col $order"; //be sure you trust these values, I validate via the in_array checks above
 }
-//paginate function
-$per_page = 4;
-//paginate($total_query . $query, $params, $per_page);
-//get the total
-///* this comment block has been replaced by paginate()
-//get the total
 $stmt = $db->prepare($total_query . $query);
 $total = 0;
 try {
@@ -97,13 +80,6 @@ $query .= " LIMIT :offset, :count";
 $params[":offset"] = $offset;
 $params[":count"] = $per_page;
 
-    
-          
-            
-    
-
-          
-    
     
   
 //get the records

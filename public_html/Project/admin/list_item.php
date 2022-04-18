@@ -8,9 +8,10 @@ if (!has_role("Admin") && !has_role("Shop Owner")) {
 }
 
 $results = [];
+
 if (isset($_POST["itemName"])) {
     $db = getDB();
-    $stmt = $db->prepare("SELECT id, name, description, stock, cost, image from $TABLE_NAME WHERE name like :name LIMIT 50");
+    $stmt = $db->prepare("SELECT id, name,category, description, stock, cost, image,visibility from $TABLE_NAME WHERE name like :name LIMIT 50");
     try {
         $stmt->execute([":name" => "%" . $_POST["itemName"] . "%"]);
         $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -31,7 +32,7 @@ if (isset($_POST["itemName"])) {
             <input class="btn btn-outline-success" type="submit" value="Search" style="margin-left: 50px;background:lightgreen; color:black;" />
       
     </form>
-    <?php if (count($results) == 0) : ?>
+    <?php if (count($results) == 0) : ?>        
         <p>No results to show</p>
     <?php else : ?>
         <table class="table" style="color:black; background:lightskyblue;">
@@ -46,6 +47,11 @@ if (isset($_POST["itemName"])) {
                 <?php endif; ?>
                 <tr>
                     <?php foreach ($record as $column => $value) : ?>
+                        <?php if($column=="visibility" )
+                                if($value==1 )
+                                    $value="True";
+                                else $value="false";
+                        ?>
                         <td ><?php se($value, null, "N/A"); ?></td>
                     <?php endforeach; ?>
 
