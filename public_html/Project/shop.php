@@ -90,7 +90,7 @@ try {
 }
 //apply the pagination (the pagination stuff will be moved to reusable pieces later)
 $page = se($_GET, "page", 1, false); //default to page 1 (human readable number)
-$per_page = 10; //how many items to show per page (hint, this could also be something the user can change via a dropdown or similar)
+$per_page = 5; //how many items to show per page (hint, this could also be something the user can change via a dropdown or similar)
 $offset = ($page - 1) * $per_page;
 //end commented out coded moved to paginate()*/
 $query .= " LIMIT :offset, :count";
