@@ -53,39 +53,49 @@
   -  [https://psg4-prod.herokuapp.com/Project/profile.php](https://psg4-prod.herokuapp.com/Project/profile.php)
 
 Milestone 2
-- [ ] \(mm/dd/yyyy of completion) User with an admin role or shop owner role will be able to add products to inventory
-  -  Link to related .md file: [Link Name](link url)
+- [x] \(04/15/2022) User with an admin role or shop owner role will be able to add products to inventory
+  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [https://psg4-prod.herokuapp.com/Project/admin/add_item.php](https://psg4-prod.herokuapp.com/Project/admin/add_item.php)
   
-- [ ] \(mm/dd/yyyy of completion) Any user will be able to see products with visibility = true on the Shop page
+- [x] \(04/18/2022) Any user will be able to see products with visibility = true on the Shop page
+  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php)
+  
+- [x] \(04/18/2022) Admin/Shop owner will be able to see products with any visibility
+  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php)
 
-  -  Link to related .md file: [Link Name](link url)
+- [x] \(04/15/2022) Admin/Shop owner will be able to edit any product
+  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [https://psg4-dev.herokuapp.com/Project/admin/list_item.php](https://psg4-dev.herokuapp.com/Project/admin/list_item.php)
   
-- [ ] \(mm/dd/yyyy of completion) Admin/Shop owner will be able to see products with any visibility
-  -  Link to related .md file: [Link Name](link url)
+- [x] \(04/18/2022) User will be able to click an item from a list and view a full page with more info about the item (Product Details Page)
+  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [https://psg4-dev.herokuapp.com/Project/Item_detail.php?id=2](https://psg4-dev.herokuapp.com/Project/Item_detail.php?id=2)
+  
+- [x] \(04/18/2022) User must be logged in for any Cart related activity below
+  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php)
 
-- [ ] \(mm/dd/yyyy of completion) Admin/Shop owner will be able to edit any product
-  -  Link to related .md file: [Link Name](link url)
+- [x] \(04/18/2022) User will be able to add items to Cart
+  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php)
   
-- [ ] \(mm/dd/yyyy of completion) User will be able to click an item from a list and view a full page with more info about the item (Product Details Page)
-  -  Link to related .md file: [Link Name](link url)
+- [x] \(04/18/2022) User will be able to see their cart
+  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [https://psg4-dev.herokuapp.com/Project/cart.php](https://psg4-dev.herokuapp.com/Project/cart.php)
   
-- [ ] \(mm/dd/yyyy of completion) User must be logged in for any Cart related activity below
-  -  Link to related .md file: [Link Name](link url)
+- [x] \(04/18/2022) User will be able to change quantity of items in their cart
+  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [https://psg4-dev.herokuapp.com/Project/cart.php](https://psg4-dev.herokuapp.com/Project/cart.php)
 
-- [ ] \(mm/dd/yyyy of completion) User will be able to add items to Cart
-  -  Link to related .md file: [Link Name](link url)
-  
-- [ ] \(mm/dd/yyyy of completion) User will be able to see their cart
-  -  Link to related .md file: [Link Name](link url)
-  
-- [ ] \(mm/dd/yyyy of completion) User will be able to change quantity of items in their cart
-  -  Link to related .md file: [Link Name](link url)
+- [x] \(04/18/2022) User will be able to remove a single item from their cart via button click
+  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [https://psg4-dev.herokuapp.com/Project/cart.php](https://psg4-dev.herokuapp.com/Project/cart.php)
 
-- [ ] \(mm/dd/yyyy of completion) User will be able to remove a single item from their cart via button click
-  -  Link to related .md file: [Link Name](link url)
-
-- [ ] \(mm/dd/yyyy of completion) User will be able to clear their entire cart via a button click
-  -  Link to related .md file: [Link Name](link url)
+- [x] \(04/18/2022) User will be able to clear their entire cart via a button click
+  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [https://psg4-dev.herokuapp.com/Project/cart.php](https://psg4-dev.herokuapp.com/Project/cart.php)
  
   
 - Milestone 3
