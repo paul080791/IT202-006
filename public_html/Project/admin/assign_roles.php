@@ -69,18 +69,18 @@ if (isset($_POST["username"])) {
 
 ?>
 <h1>Assign Roles</h1>
-<form method="POST">
-    <input type="search" name="username" placeholder="Username search" />
-    <input type="submit" value="Search" />
+<form method="POST" class="navbar navbar-expand-lg navbar-light bg-light">
+    <input style="margin: 10px 0px 20px 50px; width:300px;" class="form-control me-2" type="search" name="username" placeholder="Username search" />
+    <input  class="btn btn-outline-success"  style="margin-left: 50px;background:lightgreen; color:black;" type="submit" value="Search" />
 </form>
 <form method="POST">
     <?php if (isset($username) && !empty($username)) : ?>
         <input type="hidden" name="username" value="<?php se($username, false); ?>" />
     <?php endif; ?>
-    <table>
+    <table class="table" style="color:black; background:lightskyblue;">
         <thead>
-            <th>Users</th>
-            <th>Roles to Assign</th>
+            <th scope="col">Users</th>
+            <th scope="col">Roles to Assign</th>
         </thead>
         <tbody>
             <tr>
@@ -89,8 +89,8 @@ if (isset($_POST["username"])) {
                         <?php foreach ($users as $user) : ?>
                             <tr>
                                 <td>
-                                    <label for="user_<?php se($user, 'id'); ?>"><?php se($user, "username"); ?></label>
-                                    <input id="user_<?php se($user, 'id'); ?>" type="checkbox" name="users[]" value="<?php se($user, 'id'); ?>" />
+                                    <label for="user_<?php se($user, 'id'); ?>"><?php se($user, "username"); ?></label></td>    
+                                    <td ><input style="margin-left:0.3cm;margin-top:0.4cm;" id="user_<?php se($user, 'id'); ?>" type="checkbox" name="users[]" value="<?php se($user, 'id'); ?>" /></td>
                                 </td>
                                 <td><?php se($user, "roles", "No Roles"); ?></td>
                             </tr>
@@ -112,5 +112,5 @@ if (isset($_POST["username"])) {
 </form>
 <?php
 //note we need to go up 1 more directory
-require_once(__DIR__ . "/../../../partials/flash.php");
+require_once(__DIR__ . "/../../../partials/footer.php");
 ?>
