@@ -1,6 +1,6 @@
 <table><tr><td> <em>Assignment: </em> IT202 Milestone 2 Shop Project</td></tr>
 <tr><td> <em>Student: </em> Paul Gutierrez(psg4)</td></tr>
-<tr><td> <em>Generated: </em> 4/18/2022 11:44:01 PM</td></tr>
+<tr><td> <em>Generated: </em> 4/19/2022 12:23:22 AM</td></tr>
 <tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IT202-006-S22/it202-milestone-2-shop-project/grade/psg4" target="_blank">Grading</a></td></tr></table>
 <table><tr><td> <em>Instructions: </em> <ol>
 <li>Checkout Milestone2 branch </li>
@@ -31,11 +31,11 @@ All website links must be from prod (you can assume/infer this by getting your d
 <tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163883765-cb92747f-4d31-4579-b215-c4dbf59343d3.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Add item page for paultest2(Shop Owner only)<br></p>
 </td></tr>
-<tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163884235-60221eb3-994d-400a-a630-c0b19b3320f1.png"/></td></tr>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163917357-a0491f42-6ee3-48f9-9fae-1b2b8fe466d9.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Show generate flash message when I add a item for Psg4<br></p>
 </td></tr>
-<tr><td><img width="768px" src="Customer can't add items"/></td></tr>
-<tr><td> <em>Caption:</em> <p><img src="https://user-images.githubusercontent.com/78453577/163884558-d64b2dd1-d0f5-41ca-bdb5-8d4afbfa6847.png" alt="image"><br></p>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163884558-d64b2dd1-d0f5-41ca-bdb5-8d4afbfa6847.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Customer can&#39;t add items<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Add screenshot of populated Products table clearly showing the columns</td></tr>
@@ -66,8 +66,8 @@ All website links must be from prod (you can assume/infer this by getting your d
 <tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163887798-8ff964a5-9827-4cc8-8932-9f0c57ac65ca.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Apply filter Beauty and Price Down<br></p>
 </td></tr>
-<tr><td><img width="768px" src="Apply filter by cost down for all category"/></td></tr>
-<tr><td> <em>Caption:</em> <p><img src="https://user-images.githubusercontent.com/78453577/163888053-94bfaf41-ea04-47ea-b4e5-07a7a7874d08.png" alt="image"><br></p>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163888053-94bfaf41-ea04-47ea-b4e5-07a7a7874d08.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Apply filter by cost down for all category<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 3: </em> Add a screenshot of the filter/sort logic from the code (ensure ucid and date is shown)</td></tr>
@@ -232,8 +232,8 @@ All website links must be from prod (you can assume/infer this by getting your d
 <tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163910877-02709e0a-1291-47e4-aff0-caa06e8cabc7.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Before Clear Cart<br></p>
 </td></tr>
-<tr><td><img width="768px" src="After Clear Cart"/></td></tr>
-<tr><td> <em>Caption:</em> <p><img src="https://user-images.githubusercontent.com/78453577/163910922-897f5f9b-73e3-445c-9a92-4811310e5da6.png" alt="image"><br></p>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163910922-897f5f9b-73e3-445c-9a92-4811310e5da6.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>After Clear Cart<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 3: </em> Briefly explain how each delete process works</td></tr>
