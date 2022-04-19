@@ -1,6 +1,6 @@
 <table><tr><td> <em>Assignment: </em> IT202 Milestone 2 Shop Project</td></tr>
 <tr><td> <em>Student: </em> Paul Gutierrez(psg4)</td></tr>
-<tr><td> <em>Generated: </em> 4/18/2022 11:31:08 PM</td></tr>
+<tr><td> <em>Generated: </em> 4/18/2022 11:44:01 PM</td></tr>
 <tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IT202-006-S22/it202-milestone-2-shop-project/grade/psg4" target="_blank">Grading</a></td></tr></table>
 <table><tr><td> <em>Instructions: </em> <ol>
 <li>Checkout Milestone2 branch </li>
@@ -87,7 +87,7 @@ All website links must be from prod (you can assume/infer this by getting your d
 </table></td></tr>
 <table><tr><td> <em>Deliverable 3: </em> Show Admin/Shop Owner Product List (this is not the Shop page and should show visibility status) </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Screenshot of the Admin List page/results</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163892837-4cd4dbcf-9ed9-44a7-9ea8-c37d4cba88bd.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163915728-1e86da0e-e17d-4b8b-932b-a8c399253ff5.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Show list items page for admin psg4<br></p>
 </td></tr>
 </table></td></tr>
@@ -110,7 +110,7 @@ All website links must be from prod (you can assume/infer this by getting your d
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 3: </em> Add a sceenshot showing the edit button visible to the Admin on the Admin Product List Page</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163892837-4cd4dbcf-9ed9-44a7-9ea8-c37d4cba88bd.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163915728-1e86da0e-e17d-4b8b-932b-a8c399253ff5.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Show list items page for admin psg4<br></p>
 </td></tr>
 </table></td></tr>
@@ -249,7 +249,7 @@ All website links must be from prod (you can assume/infer this by getting your d
 </table></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Add screenshots showing which issues are done/closed (project board) Incomplete Issues should not be closed (Milestone2 issues)</td></tr>
 <tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/78453577/163914573-713aac97-c4f9-40b8-8932-69076165f66d.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>Showing the issues completed<br></p>
+<tr><td> <em>Caption:</em> <p>Showing the issues c<br></p>
 </td></tr>
 </table></td></tr>
 </table></td></tr>
