@@ -26,16 +26,23 @@ if(isset($_POST[" item_id"])){
 
 $db = getDB();
 if(isset($_POST["view"])){
-    $stmt = $db->prepare("SELECT  item_id From RM_Cart where  item_id= :id ");
+    $stmt = $db->prepare("SELECT  item_id From RM_Cart where  item_id= :id and ");
     $r = $stmt->execute([":id"=>$_POST["item_id"]]);
     if($r){
         flash("item selected", "success");
     }
 }
 if(isset($_POST["update"])){
-    $stmt= $db->prepare ("SELECT RM_Items.stock from RM_Items JOIN RM_Cart ON RM_Items.id= RM_Cart.item_id where RM_Cart.id= :cid");
+    $stmt= $db->prepare ("SELECT RM_Items.stock from RM_Items JOIN RM_Cart ON RM_Items.id= RM_Cart.item_id where RM_Cart.id= :cid ");
     $stmt->execute([":cid"=>$_POST["cart_id"]]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    if($_POST["desired_quantity"]==0 ) {
+    $stmt = $db->prepare("DELETE FROM RM_Cart where id = :id");
+    $r = $stmt->execute([":id"=>$_POST["cart_id"]]);
+    if($r){
+      flash("Deleted item from cart", "success");
+    }
+    }
     if($_POST["desired_quantity"] >$result["stock"] ) {
       flash("Out of stock" , "danger");
     } else {
