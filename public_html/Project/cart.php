@@ -9,23 +9,17 @@ require(__DIR__ . "/../../partials/cart.php");
         <div class="list-group">
         <?php if($results && count($results) > 0):?>
             <?php foreach($results as $r):?>
-            <div class="list-group-item" style="height:3.9cm;background-color:lavender">
-            <div class="row">
-                    <div class="col"></div>
-                   <div class="col">Cost</div>
-                    <div class="col">Quantity</div>
-                    <div class="col">Subtotal</div>
-                    </div>
+            <div class="list-group-item" style="height:3.5cm;">
                 <form method="POST">
                 <div class="row">
                     <div class="col">
-                    <input type="hidden" name=" item_id" value="<?php se($r,"item_id");?>"/>
+                    <input type="hidden" name=" item_id" value="<?php se($r,"item_  id");?>"/>
                     <a href="Item_detail.php?id=<?php se($r, "item_id");?>"> <?php se($r,"name");?> </a>
                     </div>
                    
                     
                     <div class="col">
-                        $ <?php se($r,"unit_cost");?>
+                        <?php se($r,"unit_cost");?>
                     </div>
                     <div class="col">
 
@@ -34,7 +28,7 @@ require(__DIR__ . "/../../partials/cart.php");
 
                     </div>
                     <div class="col">
-                       $ <?php se($r,"sub");?>
+                        <?php se($r,"sub");?>
                     </div>
                     </div>
                     
@@ -55,7 +49,7 @@ require(__DIR__ . "/../../partials/cart.php");
             </div>
         <?php endforeach;?>
         <div class="col">
-               <h3>Total</h3> 
+               <h3>Subtotal</h3> 
             </div>
           <h3>  <div class="col">
                 <?php echo '$'.$total;?>
