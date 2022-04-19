@@ -11,7 +11,7 @@ if(isset($_POST["item_id"])){
         if($result) {
             $name = $result["name"];
             $price = $result["cost"];
-            $visibility=$result["visibility"];
+           // $visibility=$result["visibility"];
             $stmt = $db->prepare("INSERT INTO RM_Cart (user_id, item_id, unit_cost, desired_quantity) VALUES(:user_id, :item_id, :unit_cost, 1) ON DUPLICATE KEY UPDATE desired_quantity = desired_quantity +1, unit_cost = :unit_cost"); 
             $r = $stmt->execute([":user_id"=>get_user_id(), ":item_id"=>$id, ":unit_cost"=>$price,]);
         }
