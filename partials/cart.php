@@ -4,6 +4,8 @@ if (!is_logged_in()) {
     die(header("Location: login.php"));
 }
 
+
+
 if(isset($_POST[" item_id"])){
     if(is_logged_in()){
        $id = (int)$_POST[" item_id"];
@@ -74,3 +76,53 @@ $stmt = $db->prepare("SELECT c.item_id,c.id, p.name, c.unit_cost, c.desired_quan
 $stmt->execute([":id"=>get_user_id()]);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $total=0;
+if(count($results)>0){
+    foreach ($results as $checkcost){
+        $stmt = $db->prepare("SELECT cost, stock,visibility from RM_Items WHERE  id= :id");    
+        $stmt->execute([":id"=>$checkcost["item_id"]]);
+        $h =$stmt->fetch(PDO::FETCH_ASSOC);
+        if ($h["cost"]!=$checkcost["unit_cost"]){
+            $stmt = $db->prepare("UPDATE RM_Cart set unit_cost = :cost where item_id = :id ");
+             $f = $stmt->execute([":id"=>$checkcost["item_id"], ":cost"=>$h["cost"]]);
+            if($f){
+                 flash("Updated cost", "success");
+                 }
+        }
+        if($h["visibility"]==0)
+        {
+            $stmt = $db->prepare("DELETE FROM RM_Cart where id = :id");
+            $r = $stmt->execute([":id"=>$checkcost["id"]]);
+            if($r){
+                $nam=$checkcost["name"];
+                flash("Item $nam is unavailable right now! Deleted from cart", "danger");
+                }
+
+        }else if($h["stock"]==0)
+    {
+        $stmt = $db->prepare("DELETE FROM RM_Cart where id = :id");
+        $r = $stmt->execute([":id"=>$checkcost["id"]]);
+        if($r){
+            $nam=$checkcost["name"];
+            flash("Item $nam is out of stock! Deleted from cart", "danger");
+            }
+          
+    }
+    else if ($h["stock"]<$checkcost["desired_quantity"]){
+            $stmt = $db->prepare("UPDATE RM_Cart set desired_quantity = :q where item_id = :id ");
+             $g = $stmt->execute([":id"=>$checkcost["item_id"], ":q"=>$h["stock"]]);
+            if($g){
+                $nam=$checkcost["name"];
+                $qua=$h["stock"];
+                 flash("Updated quantity of $nam: only $qua in stock", "success");
+                 }
+        }
+        
+        
+
+    }
+}
+$stmt = $db->prepare("SELECT c.item_id,c.id, p.name, c.unit_cost, c.desired_quantity, (c.unit_cost * c.desired_quantity) AS sub FROM RM_Cart c JOIN RM_Items p ON c. item_id = p.id WHERE c.user_id = :id");
+            $stmt->execute([":id"=>get_user_id()]);
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $total=0;
+
