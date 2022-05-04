@@ -70,10 +70,10 @@ require(__DIR__ . "/../../partials/cart.php");
 <form method="POST">
 <div >
 
-    <a class="btn btn-success" href="#" role="button">Checkout</a>
+    <a class="btn btn-success" href="Checkout.php" role="button">Checkout</a>
     <input type="hidden" name="cart_id" value="<?php se($r,"id");?>"/>
     <input style="margin-left:20px;margin-top:0.5cm;" type="submit" class="btn btn-danger" name="deleteAll" value="Clear Cart"/>
- 
+    
 		
 </div>
 </form>
