@@ -5,17 +5,26 @@ if(isset($_POST["item_id"])){
         $id = (int)$_POST["item_id"];
 
         $db = getDB();
-        $stmt = $db->prepare("SELECT name, cost, category from RM_Items where id = :id ");
+        $stmt = $db->prepare("SELECT name, cost,stock,category from RM_Items where id = :id ");
         $stmt->execute([":id"=>$id]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
+// check stock against desired quantity
+        $stmt = $db->prepare("SELECT desired_quantity from RM_Cart where user_id = :user_id and item_id=:id");
+        $stmt->execute([":user_id"=>get_user_id(), ":id"=>$id]);
+        $r_cart = $stmt->fetch(PDO::FETCH_ASSOC);
         if($result) {
             $name = $result["name"];
             $price = $result["cost"];
            // $visibility=$result["visibility"];
+            if ($result["stock"] >= $r_cart["desired_quantity"]+1) {
             $stmt = $db->prepare("INSERT INTO RM_Cart (user_id, item_id, unit_cost, desired_quantity) VALUES(:user_id, :item_id, :unit_cost, 1) ON DUPLICATE KEY UPDATE desired_quantity = desired_quantity +1, unit_cost = :unit_cost"); 
             $r = $stmt->execute([":user_id"=>get_user_id(), ":item_id"=>$id, ":unit_cost"=>$price,]);
+            flash("Item Add to Cart!", "success");
+            }
+            else 
+            flash("out of stock", "danger");
         }
-        flash("Item Add to Cart!", "success");
+       
 }else{
     flash("You must log in to add to cart");
 
