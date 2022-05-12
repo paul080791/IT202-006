@@ -185,7 +185,7 @@ try {
                      <script>
                     //quick fix to ensure proper value is selected since
                     //value setting only works after the options are defined and php has the value set prior
-                    document.forms[0].End.value = "<?php se($startRange); ?>";
+                    document.forms[0].End.value = "<?php se($endRange); ?>";
                 </script>
                 </div>
         </div>
