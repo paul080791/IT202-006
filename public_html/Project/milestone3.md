@@ -1,6 +1,6 @@
 <table><tr><td> <em>Assignment: </em> IT202 Milestone 3 Shop Project</td></tr>
 <tr><td> <em>Student: </em> Paul Gutierrez(psg4)</td></tr>
-<tr><td> <em>Generated: </em> 5/11/2022 11:15:28 PM</td></tr>
+<tr><td> <em>Generated: </em> 5/11/2022 11:23:33 PM</td></tr>
 <tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IT202-006-S22/it202-milestone-3-shop-project/grade/psg4" target="_blank">Grading</a></td></tr></table>
 <table><tr><td> <em>Instructions: </em> <ol>
 <li>Checkout Milestone3 branch </li>
@@ -63,7 +63,7 @@ All website links must be from prod (you can assume/infer this by getting your d
 <tr><td> <em>Sub-Task 7: </em> Add related pull request link(s)</td></tr>
 <tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/paul080791/IT202-006/pull/75">https://github.com/paul080791/IT202-006/pull/75</a> </td></tr>
 <tr><td> <em>Sub-Task 8: </em> Add a direct link to heroku prod for this file</td></tr>
-<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-dev.herokuapp.com/Project/Checkout.php">https://psg4-dev.herokuapp.com/Project/Checkout.php</a> </td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-prod.herokuapp.com/Project/Checkout.php">https://psg4-prod.herokuapp.com/Project/Checkout.php</a> </td></tr>
 </table></td></tr>
 <table><tr><td> <em>Deliverable 2: </em> Order Confirmation Page </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Screenshot showing the order details from the purchase form and the related items that were purchased with a thank you message</td></tr>
@@ -76,7 +76,7 @@ All website links must be from prod (you can assume/infer this by getting your d
 <tr><td> <em>Sub-Task 3: </em> Add related pull request link(s)</td></tr>
 <tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/paul080791/IT202-006/pull/76">https://github.com/paul080791/IT202-006/pull/76</a> </td></tr>
 <tr><td> <em>Sub-Task 4: </em> Add a direct link to heroku prod for this file</td></tr>
-<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-dev.herokuapp.com/Project/orderConfirmation.php">https://psg4-dev.herokuapp.com/Project/orderConfirmation.php</a> </td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-prod.herokuapp.com/Project/orderConfirmation.php">https://psg4-prod.herokuapp.com/Project/orderConfirmation.php</a> </td></tr>
 </table></td></tr>
 <table><tr><td> <em>Deliverable 3: </em> User will be able to see their Purchase History </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Add a screenshot showing purchase history for a user</td></tr>
@@ -94,8 +94,8 @@ All website links must be from prod (you can assume/infer this by getting your d
 <tr><td> <em>Sub-Task 4: </em> Add related pull request link(s)</td></tr>
 <tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/paul080791/IT202-006/pull/77">https://github.com/paul080791/IT202-006/pull/77</a> </td></tr>
 <tr><td> <em>Sub-Task 5: </em> Add a direct link to heroku prod for this file</td></tr>
-<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-dev.herokuapp.com/Project/purchase_history.php">https://psg4-dev.herokuapp.com/Project/purchase_history.php</a> </td></tr>
-<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-dev.herokuapp.com/Project/order_Information.php?order_id=4">https://psg4-dev.herokuapp.com/Project/order_Information.php?order_id=4</a> </td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-prod.herokuapp.com/Project/purchase_history.php">https://psg4-prod.herokuapp.com/Project/purchase_history.php</a> </td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-prod.herokuapp.com/Project/order_Information.php?order_id=4">https://psg4-prod.herokuapp.com/Project/order_Information.php?order_id=4</a> </td></tr>
 </table></td></tr>
 <table><tr><td> <em>Deliverable 4: </em> Store Owner Purchase History </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Add a screenshot showing purchase history from multiple users</td></tr>
@@ -113,8 +113,8 @@ All website links must be from prod (you can assume/infer this by getting your d
 <tr><td> <em>Sub-Task 4: </em> Add related pull request link(s)</td></tr>
 <tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/paul080791/IT202-006/pull/77">https://github.com/paul080791/IT202-006/pull/77</a> </td></tr>
 <tr><td> <em>Sub-Task 5: </em> Add a direct link to heroku prod for this file</td></tr>
-<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-dev.herokuapp.com/Project/admin/order_information.php?order_id=2">https://psg4-dev.herokuapp.com/Project/admin/order_information.php?order_id=2</a> </td></tr>
-<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-dev.herokuapp.com/Project/admin/all_purchase_history.php">https://psg4-dev.herokuapp.com/Project/admin/all_purchase_history.php</a> </td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-prod.herokuapp.com/Project/admin/order_information.php?order_id=2">https://psg4-prod.herokuapp.com/Project/admin/order_information.php?order_id=2</a> </td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://psg4-prod.herokuapp.com/Project/admin/all_purchase_history.php">https://psg4-prod.herokuapp.com/Project/admin/all_purchase_history.php</a> </td></tr>
 </table></td></tr>
 <table><tr><td> <em>Deliverable 5: </em> Proposal.md </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em>  Add screenshots showing your updated proposal.md file with checkmarks, dates, and link to milestone3.md accordingly and a direct link to the path on Heroku prod (see instructions)</td></tr>
