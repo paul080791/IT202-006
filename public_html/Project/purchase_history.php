@@ -22,7 +22,7 @@ if (!in_array($order, ["asc", "desc"])) {
 }
 $stmt = $db->prepare("SELECT DISTINCT category from RM_Items ");
 $stmt->execute();
-$cat = $stmt->fetch(PDO::FETCH_ASSOC);
+$cat = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $category = se($_GET, "category","All", false);
 if(!in_array($category,$cat))
