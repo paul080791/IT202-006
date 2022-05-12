@@ -5,17 +5,31 @@ if(isset($_POST["item_id"])){
         $id = (int)$_POST["item_id"];
 
         $db = getDB();
-        $stmt = $db->prepare("SELECT name, cost, category from RM_Items where id = :id ");
+        $stmt = $db->prepare("SELECT name, cost,stock,category from RM_Items where id = :id ");
         $stmt->execute([":id"=>$id]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        if($result) {
+        $g=$result;
+// check stock against desired quantity
+        $stmt = $db->prepare("SELECT desired_quantity from RM_Cart where user_id = :user_id and item_id=:id");
+        try{
+            $stmt->execute([":user_id"=>get_user_id(), ":id"=>$id]);
+            $r_cart = $stmt->fetch(PDO::FETCH_ASSOC);
+        }catch (PDOException $e) {
+            error_log(var_export($e, true));
+        }
+        if($g) {
             $name = $result["name"];
             $price = $result["cost"];
            // $visibility=$result["visibility"];
+            if ($result["stock"] >= $r_cart["desired_quantity"]+1) {
             $stmt = $db->prepare("INSERT INTO RM_Cart (user_id, item_id, unit_cost, desired_quantity) VALUES(:user_id, :item_id, :unit_cost, 1) ON DUPLICATE KEY UPDATE desired_quantity = desired_quantity +1, unit_cost = :unit_cost"); 
             $r = $stmt->execute([":user_id"=>get_user_id(), ":item_id"=>$id, ":unit_cost"=>$price,]);
+            flash("Item Add to Cart!", "success");
+            }
+            else 
+            flash("out of stock", "danger");
         }
-        flash("Item Add to Cart!", "success");
+       
 }else{
     flash("You must log in to add to cart");
 
@@ -27,7 +41,7 @@ $db = getDB();
 //Sort and Filters
 $col = se($_GET, "col", "cost", false);
 //allowed list
-if (!in_array($col, ["cost", "stock", "name", "created"])) {
+if (!in_array($col, ["cost", "stock", "name", "created", "Average_rating"])) {
     $col = "cost"; //default value, prevent sql injection
 }
 $order = se($_GET, "order", "asc", false);
@@ -36,11 +50,20 @@ if (!in_array($order, ["asc", "desc"])) {
     $order = "asc"; //default value, prevent sql injection
 }
 
+$stmt = $db->prepare("SELECT DISTINCT category from RM_Items ");
+$stmt->execute();
+$cat = $stmt->fetch(PDO::FETCH_ASSOC);
+
 $category = se($_GET, "category","All", false);
+if(!in_array($category,$cat))
+    $category="All";//prevent sql injection
+
+
 //get name partial search
+
 $name = se($_GET, "name", "", false);
 //split query into data and total
-$base_query = "SELECT id, name,category,visibility, description, cost, stock, image FROM RM_Items items ";
+$base_query = "SELECT id, name,category,visibility, description, cost, stock, Average_rating, image FROM RM_Items items ";
 $total_query = "SELECT count(1) as total FROM RM_Items items";
 //flash("$total_query")
 //dynamic query
@@ -60,22 +83,8 @@ if (!empty($name)) {
 if (!empty($col) && !empty($order)) {
     $query .= " ORDER BY $col $order"; //be sure you trust these values, I validate via the in_array checks above
 }
-$stmt = $db->prepare($total_query . $query);
-$total = 0;
-try {
-    $stmt->execute($params);
-    $r = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($r) {
-        $total = (int)se($r, "total", 0, false);
-    }
-} catch (PDOException $e) {
-    flash("<pre>" . var_export($e, true) . "</pre>");
-}
-//apply the pagination (the pagination stuff will be moved to reusable pieces later)
-$page = se($_GET, "page", 1, false); //default to page 1 (human readable number)
-$per_page = 11; //how many items to show per page (hint, this could also be something the user can change via a dropdown or similar)
-$offset = ($page - 1) * $per_page;
-//end commented out coded moved to paginate()*/
+$per_page=10;
+paginate($total_query . $query, $params,$per_page);
 $query .= " LIMIT :offset, :count";
 $params[":offset"] = $offset;
 $params[":count"] = $per_page;
@@ -96,6 +105,8 @@ try {
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($r) {
         $results = $r;
+       
+    //echo $offset . $page;
     }
 } catch (PDOException $e) {
     error_log(var_export($e, true));
@@ -150,6 +161,7 @@ try {
                     <option value="stock">Stock</option>
                     <option value="name">Name</option>
                     <option value="created">Created</option>
+                    <option value="Average_rating">Rating </option>
                 </select>
                 <script>
                     //quick fix to ensure proper value is selected since
@@ -216,6 +228,13 @@ try {
                                 Cost: <?php se($item, "cost"); ?>
                                 <input type="hidden" name="item_id" value="<?php se($item, "id"); ;?>"/>
 						        <input type="submit" value="Add to Cart"/>
+                                Rate: <?php if($item["Average_rating"]==0)
+                                            se("Not Yet Rated");
+                                            else 
+                                            se($item, "Average_rating");
+                                                
+                                        ?>
+                                
                             </div>
                         </div>
                             </form>
