@@ -82,7 +82,7 @@ try {
     $stmt->execute($params); //dynamically populated params to bind
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-    //echo $base_query . $query;
+    echo $base_query . $query;
 
     if ($r) {
         $results = $r;
@@ -171,7 +171,7 @@ try {
                      <script>
                     //quick fix to ensure proper value is selected since
                     //value setting only works after the options are defined and php has the value set prior
-                    document.forms[0].End.value = "<?php se($startRange); ?>";
+                    document.forms[0].End.value = "<?php se($endRange); ?>";
                 </script>
                 </div>
         </div>
@@ -253,7 +253,15 @@ try {
         <?php else:?>
         <?php endif;?>
     </div>
+    <?php
+   
+
+   //$total_pages = 5;
+   //$total=10;
+   //updates or inserts page into query string while persisting anything already present
   
+
+   ?>
 
 <div class="mt-3">
                 <?php /* added pagination */ ?>
