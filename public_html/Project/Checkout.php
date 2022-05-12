@@ -10,6 +10,64 @@ if (!is_logged_in()) {
 $done=0;
 $db = getDB();
 if(isset($_POST["checkout"])){
+    $stmt = $db->prepare("SELECT cart.id,cart.item_id, item.name, cart.unit_cost, cart.desired_quantity, (cart.unit_cost * cart.desired_quantity) as sub from RM_Cart cart JOIN RM_Items item on cart.item_id = item.id where cart.user_id = :id");
+$stmt->execute([":id"=>get_user_id()]);
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//$BeforeDeletedCart=$results;
+$total = 0;
+//verify cost----------------------------
+if(count($results)>0){
+    foreach ($results as $checkcost){
+        $stmt = $db->prepare("SELECT cost,stock,visibility from RM_Items WHERE  id= :id");    
+        $stmt->execute([":id"=>$checkcost["item_id"]]);
+        $h =$stmt->fetch(PDO::FETCH_ASSOC);
+        if ($h["cost"]!=$checkcost["unit_cost"]){
+            $stmt = $db->prepare("UPDATE RM_Cart set unit_cost = :cost where item_id = :id ");
+             $f = $stmt->execute([":id"=>$checkcost["item_id"], ":cost"=>$h["cost"]]);
+            if($f){
+                    flash("Updated cost", "success");
+                    redirect("cart.php");
+                }
+    }
+    //compare desired quantity against stock, visibility and out of stock
+    if($h["visibility"]==0)
+        {
+            $stmt = $db->prepare("DELETE FROM RM_Cart where id = :id");
+            $r = $stmt->execute([":id"=>$checkcost["id"]]);
+            if($r){
+                $nam=$checkcost["name"];
+                flash("Item $nam is unavailable right now! Deleted from cart", "danger");
+                redirect("cart.php");
+                }
+
+        }else if($h["stock"]==0)
+    {
+        $stmt = $db->prepare("DELETE FROM RM_Cart where id = :id");
+        $r = $stmt->execute([":id"=>$checkcost["id"]]);
+        if($r){
+            $nam=$checkcost["name"];
+            flash("Item $nam is out of stock! Deleted from cart", "danger");
+            redirect("cart.php");
+            }
+          
+    }
+    else if ($h["stock"]<$checkcost["desired_quantity"]){
+        $stmt = $db->prepare("UPDATE RM_Cart set desired_quantity = :q where item_id = :id ");
+         $g = $stmt->execute([":id"=>$checkcost["item_id"], ":q"=>$h["stock"]]);
+        if($g){
+            $nam=$checkcost["name"];
+            $qua=$h["stock"];
+             flash("Updated quantity of $nam: only $qua in stock", "success");
+             redirect("cart.php");
+             
+             }
+    }
+    
+
+
+    }
+    
+}
     $done=1;
 	$stmt = $db->prepare("SELECT IFNULL(MAX(order_id),0) as orderidmax FROM OrderItems");
 	$stmt->execute();
@@ -21,6 +79,9 @@ if(isset($_POST["checkout"])){
 	$address = '';
 	if(isset($_POST['street'])){
 		$address .= $_POST['street'];
+	}
+    if(isset($_POST['apt'])){
+		$address .= $_POST['apt'];
 	}
 	if(isset($_POST['city'])){
 		$address .= ' ' .$_POST['city'];
@@ -47,19 +108,12 @@ if(isset($_POST["checkout"])){
 	
 	foreach($purchases as $p){
 
-        
-		
-		
-        
         $stmt = $db->prepare("INSERT INTO OrderItems(order_id, item_id, quantity, unit_cost) VALUES(:order_id, :item_id, :q, :unit_cost)");
         $stmt->execute([
         ":order_id"=> $max,
         ":item_id"=>$p["id"],
         ":q"=>$p["desired_quantity"],
         ":unit_cost"=>$p["cost"]]);
-       // flash($max,"success");
-        //flash($p["id"],"success");
-        
 
         //update stock
         
@@ -67,8 +121,7 @@ if(isset($_POST["checkout"])){
 		$stmt->execute([
 		":q"=>$p["desired_quantity"],
 		":id"=>$p["id"]]);
-        
-	}
+    }
     $stmt = $db->prepare("SELECT c.item_id,c.id, p.name, c.unit_cost, c.desired_quantity, (c.unit_cost * c.desired_quantity) AS sub FROM RM_Cart c JOIN RM_Items p ON c. item_id = p.id WHERE c.user_id = :id");
     $stmt->execute([":id"=>get_user_id()]);
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -76,9 +129,7 @@ if(isset($_POST["checkout"])){
 	//clear cart
 	$stmt = $db->prepare("DELETE FROM RM_Cart where user_id = :uid");
 	$stmt->execute([":uid"=>get_user_id()]);
-
-	
-            redirect("orderConfirmation.php");
+     redirect("orderConfirmation.php");
 }
 
 $stmt = $db->prepare("SELECT cart.id,cart.item_id, item.name, cart.unit_cost, cart.desired_quantity, (cart.unit_cost * cart.desired_quantity) as sub from RM_Cart cart JOIN RM_Items item on cart.item_id = item.id where cart.user_id = :id");
@@ -107,6 +158,7 @@ if(count($results)>0){
             if($r){
                 $nam=$checkcost["name"];
                 flash("Item $nam is unavailable right now! Deleted from cart", "danger");
+                
                 }
 
         }else if($h["stock"]==0)
@@ -193,6 +245,9 @@ $stmt = $db->prepare("SELECT c.item_id,c.id, p.name, c.unit_cost, c.desired_quan
             <input type="text" class= "col" name="street" required placeholder="Street Address" aria-label= "Street Address" aria-describedby="basic-addon1"/>
 			</div>
             <div class="mb-4">
+            <input type="text" class= "col" name="apt"  placeholder="Apt." aria-label= "Apartment " aria-describedby="basic-addon1"/>
+			</div>
+            <div class="mb-4">
             <input type="text" class= "col" name="city" required placeholder="City " aria-label= "City" aria-describedby="basic-addon1"/>
             </div>
             <input type="text" class= "col" name="state" required placeholder="State" aria-label= "State" aria-describedby="basic-addon1"/>
@@ -200,7 +255,8 @@ $stmt = $db->prepare("SELECT c.item_id,c.id, p.name, c.unit_cost, c.desired_quan
             <input type="text" class= "col" name="zipcode" required placeholder="Zip/Postal Code" aria-label= "ZipCode" aria-describedby="basic-addon1" pattern="[0-9]*"/>
 			</div>
             <div class="mb-4">
-            <input type="number" class= "col" name="money_received" value="<?php se($total);?>"/>
+            <p >Enter the money:</p>
+            <input disabled="disabled" type="number" class= "col" name="money_received" value="<?php se($total);?>"/>
 			</div>
 
             <div class="mb-4">
@@ -225,7 +281,7 @@ $stmt = $db->prepare("SELECT c.item_id,c.id, p.name, c.unit_cost, c.desired_quan
     catch(Exception $e){
         echo $e->errorInfo;
     }
-    echo "hola" . $max; 
+    //echo "hola" . $max; 
     foreach($results as $p)
     {
         se($p,"name");
@@ -236,7 +292,6 @@ $stmt = $db->prepare("SELECT c.item_id,c.id, p.name, c.unit_cost, c.desired_quan
     <h3>Thank you for shopping with us! <?php se($address)?></h3>
         <div class="list-group">
         <?php if($results && count($results) > 0):?>
-            <?php echo 334444;?>
             <?php foreach($results as $r):?>
             <div class="list-group-item">
                 <form method="POST">
@@ -256,7 +311,7 @@ $stmt = $db->prepare("SELECT c.item_id,c.id, p.name, c.unit_cost, c.desired_quan
                         Address: </Address><?php se($address)?>
                     </div>
                     <div class="col">
-                        <?php echo "PAYMENT METHOD: ".$r["payment_method"];?>
+                          PAYMENT METHOD: <?php se($r,"payment_method");?>
                     </div>
                     <div class="col">
                         TOTAL : <?php se($total);?>
