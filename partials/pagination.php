@@ -6,6 +6,7 @@ if (!isset($total)) {
 //echo $total;
 if (!isset($per_page)) {
     flash("Note to Dev: The per_page variable is undefined", "danger");
+    $page=1;
 }
 //echo "page" . $per_page;
 $total_pages = ceil($total / $per_page);
