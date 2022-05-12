@@ -8,11 +8,16 @@ if(isset($_POST["item_id"])){
         $stmt = $db->prepare("SELECT name, cost,stock,category from RM_Items where id = :id ");
         $stmt->execute([":id"=>$id]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $g=$result;
 // check stock against desired quantity
         $stmt = $db->prepare("SELECT desired_quantity from RM_Cart where user_id = :user_id and item_id=:id");
-        $stmt->execute([":user_id"=>get_user_id(), ":id"=>$id]);
-        $r_cart = $stmt->fetch(PDO::FETCH_ASSOC);
-        if($result) {
+        try{
+            $stmt->execute([":user_id"=>get_user_id(), ":id"=>$id]);
+            $r_cart = $stmt->fetch(PDO::FETCH_ASSOC);
+        }catch (PDOException $e) {
+            error_log(var_export($e, true));
+        }
+        if($g) {
             $name = $result["name"];
             $price = $result["cost"];
            // $visibility=$result["visibility"];
