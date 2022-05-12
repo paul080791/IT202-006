@@ -41,7 +41,8 @@ session_start();
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('shop.php'); ?>">Shop</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('cart.php'); ?>">Cart</a></li>
-            <?php endif; ?>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('purchase_history.php'); ?>">Purchase History</a></li>            
+                <?php endif; ?>
             <?php if (!is_logged_in()) : ?>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('login.php'); ?>">Login</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('register.php'); ?>">Register</a></li>
@@ -70,6 +71,7 @@ session_start();
                                 <li><a class="dropdown-item" href="<?php echo get_url('admin/list_item.php'); ?>">List Product</a></li>
                             </ul>
                         </li>
+                        <li><a class="dropdown-item" href="<?php echo get_url('admin/all_purchase_history.php'); ?>">Global Purchase History</a></li>
             <?php endif; ?>  
             <?php if (is_logged_in()) : ?>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo get_url('logout.php'); ?>">Logout <?php echo get_username() ?></a></li>
