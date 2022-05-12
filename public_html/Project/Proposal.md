@@ -100,19 +100,19 @@ Milestone 2
   
 - Milestone 3
 - [x] \(05/04/2022) User will be able to purchase items in their Cart
-  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone3.md)
+  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone3/public_html/Project/milestone3.md)
   -  [https://psg4-dev.herokuapp.com/Project/Checkout.php](https://psg4-dev.herokuapp.com/Project/Checkout.php)
 
   - [x] \(05/04/2022) Order Confirmation Page
-  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone3.md)
+  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone3/public_html/Project/milestone3.md)
   -  [https://psg4-dev.herokuapp.com/Project/orderConfirmation.php](https://psg4-dev.herokuapp.com/Project/orderConfirmation.php)
 
   - [x] \(05/04/2022) User will be able to see their Purchase History
-  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone3.md)
+  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone3/public_html/Project/milestone3.md)
   -  [https://psg4-dev.herokuapp.com/Project/purchase_history.php](https://psg4-dev.herokuapp.com/Project/purchase_history.php)
 
   - [x] \(05/04/2022) Store Owner will be able to see all Purchase History
-  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone3.md)
+  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone3/public_html/Project/milestone3.md)
   -  [https://psg4-dev.herokuapp.com/Project/admin/all_purchase_history.php](https://psg4-dev.herokuapp.com/Project/admin/all_purchase_history.php)
 
 
