@@ -208,7 +208,7 @@ try {
                 <div class="row">
                     <form method="post">
                         <div class="col">
-                    Order Number: <a href="order_Information.php?order_id=<?php se($r,"id"); ?>"><?php se($r,"id");?></a>
+                    Order Number: <a href="order_information.php?order_id=<?php se($r,"id"); ?>"><?php se($r,"id");?></a>
                     <?php $oid=$r["id"];?>
                     
                     </div>
