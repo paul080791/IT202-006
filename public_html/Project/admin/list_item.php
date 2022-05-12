@@ -9,11 +9,51 @@ if (!has_role("Admin") && !has_role("Shop Owner")) {
 
 $results = [];
 
+
+$params = []; 
+$query="where 1=1 ";
 if (isset($_POST["itemName"])) {
-    $db = getDB();
-    $stmt = $db->prepare("SELECT id, name,category, description, stock, cost, image,visibility from $TABLE_NAME WHERE name like :name LIMIT 50");
+    //flash($_POST["itemName"]);
+$itemName=$_POST["itemName"];
+}
+
+if (!empty($itemName)){
+    
+$query .=" AND name like %'$itemName'%  ";
+//$params[":itemName"]= "%$itemName%";
+
+}
+$db = getDB();
+
+$base_query="SELECT id, name,category, description, stock, cost, image,visibility from $TABLE_NAME ";
+$total_query="SELECT COUNT(1) as total FROM $TABLE_NAME ";
+if (isset($_POST["OutOfStock"]))
+{
+   // flash($_POST["OutOfStock"]);
+    $query .= " AND stock=0 ";
+} 
+else
+{
+    $query .= " AND stock>=0";
+}    
+
+$per_page=10;
+paginate($total_query . $query,$params,$per_page);
+$query .= " LIMIT :offset, :count";
+$params[":offset"] = $offset;
+$params[":count"] = $per_page;
+
+$stmt = $db->prepare($base_query . $query);
+//echo 111 . $base_query . $query;
+foreach ($params as $key => $value) {
+   // echo $key ." v->  " . $value . "\n";
+    $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+    $stmt->bindValue($key, $value, $type);
+}
+$params = null;
+
     try {
-        $stmt->execute([":name" => "%" . $_POST["itemName"] . "%"]);
+        $stmt->execute($params);
         $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if ($r) {
             $results = $r;
@@ -22,14 +62,20 @@ if (isset($_POST["itemName"])) {
         error_log(var_export($e, true));
         flash("Error fetching records", "danger");
     }
-}
+    
+
 ?>
 <!--<div class="container-fluid">  -->
     <h1>List Items</h1>
     <form method="POST" class="navbar navbar-expand-lg navbar-light bg-light">
      
             <input class="form-control me-2" type="search" name="itemName" placeholder="Item Filter" style="margin: 10px 0px 20px 50px; width:300px;" />
-            <input class="btn btn-outline-success" type="submit" value="Search" style="margin-left: 50px;background:lightgreen; color:black;" />
+
+            <label class="form-label" for="OutOfStock" style="color:black"> Out of Stock</label>
+                <input class="form-check-input" id="OutOfStock" name="OutOfStock" type="radio" value=1  />
+                
+                        <input class="btn btn-outline-success" type="submit" value="Search" style="margin-left: 150px;background:lightgreen; color:black;" />
+        
       
     </form>
     <?php if (count($results) == 0) : ?>        
@@ -64,6 +110,17 @@ if (isset($_POST["itemName"])) {
         </table>
     <?php endif; ?>
 <!--</div> -->
+<div class="mt-3">
+                <?php /* added pagination */ ?>
+                <?php require(__DIR__ . "/../../../partials/pagination.php"); ?>
+            </div>
+
+ 
+
+<div class="col-4" style="min-width:30em">
+          
+         </div>
+
 <?php
-//note we need to go up 1 more directory
-require_once(__DIR__ . "/../../../partials/footer.php");
+require(__DIR__ . "/../../../partials/flash.php");
+?>
