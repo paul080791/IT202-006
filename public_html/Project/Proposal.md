@@ -54,52 +54,70 @@
 
 Milestone 2
 - [x] \(04/15/2022) User with an admin role or shop owner role will be able to add products to inventory
-  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [Milestone2](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone2.md)
   -  [https://psg4-prod.herokuapp.com/Project/admin/add_item.php](https://psg4-prod.herokuapp.com/Project/admin/add_item.php)
   
 - [x] \(04/18/2022) Any user will be able to see products with visibility = true on the Shop page
-  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [Milestone2](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone2.md)
   -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php)
   
 - [x] \(04/18/2022) Admin/Shop owner will be able to see products with any visibility
-  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [Milestone2](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone2.md)
   -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php)
 
 - [x] \(04/15/2022) Admin/Shop owner will be able to edit any product
-  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [Milestone2](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone2.md)
   -  [https://psg4-dev.herokuapp.com/Project/admin/list_item.php](https://psg4-dev.herokuapp.com/Project/admin/list_item.php)
   
 - [x] \(04/18/2022) User will be able to click an item from a list and view a full page with more info about the item (Product Details Page)
-  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [Milestone2](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone2.md)
   -  [https://psg4-dev.herokuapp.com/Project/Item_detail.php?id=2](https://psg4-dev.herokuapp.com/Project/Item_detail.php?id=2)
   
 - [x] \(04/18/2022) User must be logged in for any Cart related activity below
-  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [Milestone2](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone2.md)
   -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php)
 
 - [x] \(04/18/2022) User will be able to add items to Cart
-  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [Milestone2](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone2.md)
   -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php)
   
 - [x] \(04/18/2022) User will be able to see their cart
-  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [Milestone2](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone2.md)
   -  [https://psg4-dev.herokuapp.com/Project/cart.php](https://psg4-dev.herokuapp.com/Project/cart.php)
   
 - [x] \(04/18/2022) User will be able to change quantity of items in their cart
-  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [Milestone2](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone2.md)
   -  [https://psg4-dev.herokuapp.com/Project/cart.php](https://psg4-dev.herokuapp.com/Project/cart.php)
 
 - [x] \(04/18/2022) User will be able to remove a single item from their cart via button click
-  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [Milestone2](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone2.md)
   -  [https://psg4-dev.herokuapp.com/Project/cart.php](https://psg4-dev.herokuapp.com/Project/cart.php)
 
 - [x] \(04/18/2022) User will be able to clear their entire cart via a button click
-  -  [Milestone2](https://psg4-prod.herokuapp.com/Project/milestone2.md)
+  -  [Milestone2](https://github.com/paul080791/it202-006/blob/Milestone2/public_html/Project/milestone2.md)
   -  [https://psg4-dev.herokuapp.com/Project/cart.php](https://psg4-dev.herokuapp.com/Project/cart.php)
  
   
 - Milestone 3
-  - (duplicate template here for Milestone 1 features)
+- [x] \(05/04/2022) User will be able to purchase items in their Cart
+  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone3/public_html/Project/milestone3.md)
+  -  [https://psg4-dev.herokuapp.com/Project/Checkout.php](https://psg4-dev.herokuapp.com/Project/Checkout.php)
+
+  - [x] \(05/04/2022) Order Confirmation Page
+  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone3/public_html/Project/milestone3.md)
+  -  [https://psg4-dev.herokuapp.com/Project/orderConfirmation.php](https://psg4-dev.herokuapp.com/Project/orderConfirmation.php)
+
+  - [x] \(05/04/2022) User will be able to see their Purchase History
+  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone3/public_html/Project/milestone3.md)
+  -  [https://psg4-dev.herokuapp.com/Project/purchase_history.php](https://psg4-dev.herokuapp.com/Project/purchase_history.php)
+
+  - [x] \(05/04/2022) Store Owner will be able to see all Purchase History
+  -  [Milestone 3](https://github.com/paul080791/it202-006/blob/Milestone3/public_html/Project/milestone3.md)
+  -  [https://psg4-dev.herokuapp.com/Project/admin/all_purchase_history.php](https://psg4-dev.herokuapp.com/Project/admin/all_purchase_history.php)
+
+
+
+
 - Milestone 4
   - (duplicate template here for Milestone 1 features)
   - 
