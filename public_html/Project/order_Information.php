@@ -9,12 +9,25 @@ if (!is_logged_in()) {
 }
 $db=getDB();
     $order_id= se($_GET, "order_id", -1, false);
-    $stmt = $db->prepare("SELECT oi.item_id,oi.order_id, p.name, oi.unit_cost, oi.quantity, (oi.unit_cost * oi.quantity) AS sub FROM OrderItems oi JOIN RM_Items p ON oi.item_id = p.id WHERE oi.order_id = :id");
+    $stmt=$db->prepare("SELECT user_id from Orders where id=$order_id ");
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if($user["user_id"]!=get_user_id())
+    {
+        flash("Order # doesn't Exist");
+        die(header("Location: purchase_history.php"));
+    }   
+    
+
+
+
+
+    $stmt = $db->prepare("SELECT oi.item_id,oi.order_id, p.name,p.category, oi.unit_cost, oi.quantity, (oi.unit_cost * oi.quantity) AS sub FROM OrderItems oi JOIN RM_Items p ON oi.item_id = p.id WHERE oi.order_id = :id");
     try{
     $stmt->execute([":id"=>$order_id]);
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $total=0;
-    
     }
     catch(Exception $e){
         echo $e->errorInfo;
@@ -49,6 +62,8 @@ $db=getDB();
                 <div class="row">
                     <div class="col">
                     <?php se($r,"name");?>
+                    <br/>
+                    Caterogy: <?php se($r,"category");?>
                     </div>
                    
                     
