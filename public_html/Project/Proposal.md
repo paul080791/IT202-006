@@ -3,6 +3,7 @@
 ## Github Link: [https://github.com/paul080791/IT202-006/tree/prod/public_html/Project](https://github.com/paul080791/IT202-006/tree/prod/public_html/Project)
 ## Project Board Link: https://github.com/paul080791/IT202-006/projects/1
 ## Website Link: https://psg4-dev.herokuapp.com/Project
+## YOUTUBE Link Showcase: https://www.youtube.com/watch?v=xmR5GUiNLH4
 ## Your Name: Paul Gutierrez
 
 <!-- Line item / Feature template (use this for each bullet point) -- DO NOT DELETE THIS SECTION
