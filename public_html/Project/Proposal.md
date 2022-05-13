@@ -143,7 +143,7 @@ Milestone 2
 
 [x] \(05/10/2022) User can sort products by average rating on the Shop Page
   -  [Milestone 4](https://github.com/paul080791/it202-006/blob/Milestone4/public_html/Project/milestone4.md)
-  -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php)
+  -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php) 
 ### Intructions
 #### Don't delete this
 1. Pick one project type
