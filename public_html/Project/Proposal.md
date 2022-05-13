@@ -119,8 +119,32 @@ Milestone 2
 
 
 - Milestone 4
-  - (duplicate template here for Milestone 1 features)
-  - 
+  - [ ] \(05/10/2022) User can set their profile to be public or private 
+  -  [Milestone 4](https://github.com/paul080791/it202-006/blob/Milestone4/public_html/Project/milestone4.md)
+
+  - [x] \(05/10/2022) User will be able to rate a product they purchased
+  -  [Milestone 4](https://github.com/paul080791/it202-006/blob/Milestone4/public_html/Project/milestone4.md)
+  -  [https://psg4-prod.herokuapp.com/Project/Item_detail.php?id=1](https://psg4-prod.herokuapp.com/Project/Item_detail.php?id=1)
+
+  - [x] \(05/10/2022) User’s Purchase History Changes
+  -  [Milestone 4](https://github.com/paul080791/it202-006/blob/Milestone4/public_html/Project/milestone4.md)
+  -  [https://psg4-prod.herokuapp.com/Project/purchase_history.php](https://psg4-prod.herokuapp.com/Project/purchase_history.php)
+
+  - [x] \(05/10/2022) Store Owner Purchase History Changes
+  -  [Milestone 4](https://github.com/paul080791/it202-006/blob/Milestone4/public_html/Project/milestone4.md)
+  -  [https://psg4-prod.herokuapp.com/Project/admin/all_purchase_history.php](https://psg4-prod.herokuapp.com/Project/admin/all_purchase_history.php)
+
+  - [x] \(05/10/2022) Add pagination to Shop Page
+  -  [Milestone 4](https://github.com/paul080791/it202-006/blob/Milestone4/public_html/Project/milestone4.md)
+  -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php)
+
+  - [x] \(05/10/2022) Store Owner will be able to see all products out of stock
+  -  [Milestone 4](https://github.com/paul080791/it202-006/blob/Milestone4/public_html/Project/milestone4.md)
+  -  [https://psg4-prod.herokuapp.com/Project/admin/list_item.php](https://psg4-prod.herokuapp.com/Project/admin/list_item.php)
+
+  - [x] \(05/10/2022) User can sort products by average rating on the Shop Page
+  -  [Milestone 4](https://github.com/paul080791/it202-006/blob/Milestone4/public_html/Project/milestone4.md)
+  -  [https://psg4-prod.herokuapp.com/Project/shop.php](https://psg4-prod.herokuapp.com/Project/shop.php) 
 ### Intructions
 #### Don't delete this
 1. Pick one project type
